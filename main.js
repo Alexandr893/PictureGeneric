@@ -1,4 +1,4 @@
-// получаем инпут
+
 const input = document.getElementById('input');
 // получаем блок картинок(грид)
 const grid = document.getElementsByClassName('grid')[0];
@@ -6,14 +6,14 @@ const grid = document.getElementsByClassName('grid')[0];
 window.addEventListener('load',Theme);
 
 input.addEventListener('keydown',function(event){
-    // если пользователь нажал enter
+    
     if(event.key ==='Enter'){
         loadImg();
     }
 }
 );
 
-// так как каждый раз пользователь делает новый запрос предыдущие картинки должны удалятся 
+
 
 
 function loadImg(){
@@ -21,8 +21,7 @@ function loadImg(){
 
     const url = 'https://api.unsplash.com/search/photos/?query='+input.value+'&per_page=9&client_id=hpi3Bl8XtNXzSb5bgIW8QZbv8wUt8cjRTISWJMCRYlE';
     fetch(url)
-    // получили ответ объектом от запроса и преобразуем его
-    // то есть при получений ответа если его атрибут ok=true то вернуть его json-ом иначе вывести алерт со статусом ошибки
+ 
     .then(response=> {
         if(response.ok){
            
@@ -50,7 +49,7 @@ function loadImg(){
     })
 }
 
-// функция удаления картинки
+
 function removeImg(){
     grid.innerHTML='';
 }
